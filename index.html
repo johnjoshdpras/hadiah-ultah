@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS goes here */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .front {
+            background-color: #ffdead;
+        }
+
+        .back {
+            background-color: #fff5ee;
+            transform: rotateY(180deg);
+        }
+
+        .flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="front">
+                <h1>Open Me!</h1>
+            </div>
+            <div class="back">
+                <h1>Happy Birthday, Kimmmmm!</h1>
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-birthday-3623583-3027964.png?f=webp&w=256" style="max-width: 30%; height: auto;">
+                <p>Terima kasih sudah menjadi berkat, khususnya selama 1 bulanan ini</p>
+                <p>Terima kasih juga sudah menjadi... support system, sehingga aku bisa juga menjalani hari-hari dengan semangat</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: JavaScript to handle more complex interactions
+    </script>
+</body>
+</html>
